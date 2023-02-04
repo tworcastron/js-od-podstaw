@@ -1,18 +1,11 @@
-// operatory przypisania
+const product1 = { price: 10 }
+const product2 = { price: '20' }
+const discount = 10
 
-let a = 2
-a += 3
-a -= 2
-a *= 3
-a /= 2
-a %= 2
-a **= 2
+const total = product1.price + product2.price
+const totalWithDiscount = total - 10
 
-console.log(a);
-
-2 + 3
-2 - 3
-2 * 3
-2 / 3
-2 % 3
-2 ** 3
+console.log(`
+  Cena przed zniżką: ${total}
+  Cena po zniżce: ${totalWithDiscount}
+`)
