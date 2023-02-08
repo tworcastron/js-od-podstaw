@@ -4,10 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS od podstaw</title>
+  <link rel="stylesheet" href="src/css/styles.css">
 </head>
 <body>
-  <h1>JS od podstaw</h1>
+  <h2>Koszyk</h2>
 
-  <script src="app.js"></script>
+  <table class="card-table">
+    <thead>
+      <tr>
+        <th>Kurs</th>
+        <th>Ilość</th>
+        <th>Cena</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JS od podstaw</td>
+        <td>1</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>PHP od podstaw</td>
+        <td>1</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: right;"><b>Razem:</b></td>
+        <td><b>190</b></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="src/js/app.js"></script>
 </body>
 </html>
