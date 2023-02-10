@@ -18,8 +18,8 @@ addItem(product1);
 addItem(product2);
 
 // dodaj zniżke
-function addDiscount() {
-  discountEnabled = window.event.target.checked;
+function addDiscount(e) {
+  discountEnabled = e.target.checked;
   if (discount > 0) {
     document.querySelector('#discount-amount').innerHTML = -discount;
     document.querySelector('#discount').classList.toggle('hidden');
@@ -37,3 +37,8 @@ function calculatePrice() {
   document.querySelector('#total-price').innerHTML = total;
 }
 calculatePrice();
+
+// listenery
+document
+  .querySelector('#add-discount')
+  .addEventListener('click', addDiscount);
