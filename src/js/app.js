@@ -1,6 +1,7 @@
 const product1 = { price: 10, title: 'JS od podstaw' };
 const product2 = { price: '20', title: 'PHP od podstaw' };
 const discount = 10;
+let discountEnabled = false;
 
 // dodaj produkty do tabeli
 const itemsContainer = document.querySelector('#items');
@@ -17,23 +18,22 @@ addItem(product1);
 addItem(product2);
 
 // dodaj zniżke
-if (discount > 0) {
-  document.querySelector('#discount-amount').innerHTML = -discount;
-  document.querySelector('#discount').classList.remove('hidden');
+function addDiscount() {
+  discountEnabled = window.event.target.checked;
+  if (discount > 0) {
+    document.querySelector('#discount-amount').innerHTML = -discount;
+    document.querySelector('#discount').classList.toggle('hidden');
+  }
+  calculatePrice();
 }
-
-// String(), Number(), Boolean() !!
-if (isNaN(+product2.price)) {
-  console.log('Podano niepoprawny typ danych');
-}
-
-const total = Number(product1.price) + Number(product2.price);
-const totalWithDiscount = total - discount;
 
 // cena całkowita
-document.querySelector('#total-price').innerHTML = totalWithDiscount;
+function calculatePrice() {
+  let total = Number(product1.price) + Number(product2.price);
+  if (discountEnabled) {
+    total -= discount;
+  }
 
-console.log(`
-  Cena przed zniżką: ${total}
-  Cena po zniżce: ${totalWithDiscount}
-`);
+  document.querySelector('#total-price').innerHTML = total;
+}
+calculatePrice();
