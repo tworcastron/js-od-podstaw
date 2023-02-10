@@ -16,16 +16,22 @@ function addItem(item) {
 addItem(product1);
 addItem(product2);
 
+// dodaj zniżke
+if (discount > 0) {
+  document.querySelector('#discount-amount').innerHTML = -discount;
+  document.querySelector('#discount').classList.remove('hidden');
+}
+
 // String(), Number(), Boolean() !!
 if (isNaN(+product2.price)) {
   console.log('Podano niepoprawny typ danych');
 }
 
 const total = Number(product1.price) + Number(product2.price);
-const totalWithDiscount = total - 10;
+const totalWithDiscount = total - discount;
 
 // cena całkowita
-document.querySelector('#total-price').innerHTML = total;
+document.querySelector('#total-price').innerHTML = totalWithDiscount;
 
 console.log(`
   Cena przed zniżką: ${total}

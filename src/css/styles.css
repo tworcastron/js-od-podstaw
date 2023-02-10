@@ -18,3 +18,11 @@ body {
 .card-table th {
   background-color: #ededed;
 }
+.discount {
+  border: 1px solid #3bc53b;
+  padding: 4px 8px;
+  background-color: #b9f3b9;
+}
+.hidden {
+  display: none;
+}
