@@ -15,6 +15,9 @@ body {
   border: 1px solid #e5e5e5;
   padding: 10px;
 }
+.card-table td input {
+  width: 30px;
+}
 .card-table th {
   background-color: #ededed;
 }
@@ -25,4 +28,7 @@ body {
 }
 .hidden {
   display: none;
+}
+.marked {
+  background-color: #faebd7;
 }
