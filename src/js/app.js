@@ -16,6 +16,35 @@ function addItem(item) {
           <td><input class="quantity" type="number" value="1"></td>
           <td>${item.price}</td>
         </tr>`;
+
+  // const tr = document.createElement('tr');
+  // const td1 = document.createElement('td');
+  // const button = document.createElement('button');
+  // button.innerText = 'x';
+  // // button.classList = 'delete';
+  // button.setAttribute('class', 'delete');
+  // td1.appendChild(button);
+
+  // const td2 = document.createElement('td');
+  // td2.innerText = item.title;
+  // // const cell2  = document.createTextNode(item.title);
+
+  // const td3 = document.createElement('td');
+  // const input = document.createElement('input');
+  // input.setAttribute('type', 'number');
+  // input.setAttribute('value', '1');
+  // input.setAttribute('class', 'quantity');
+  // td3.appendChild(input);
+
+  // const td4 = document.createElement('td');
+  // td4.innerText = item.price;
+
+  // tr.appendChild(td1);
+  // tr.appendChild(td2);
+  // tr.appendChild(td3);
+  // tr.appendChild(td4);
+
+  // itemsContainer.appendChild(tr);
 }
 addItem(product1);
 addItem(product2);
