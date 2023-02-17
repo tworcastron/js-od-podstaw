@@ -4,11 +4,11 @@ const discount = 10;
 let discountEnabled = false;
 
 // definicja elementow
-const discountElement = document.querySelector('#discount')
-const discountCheckbox = document.querySelector('#add-discount')
+const discountElement = document.querySelector('#discount');
+const discountCheckbox = document.querySelector('#add-discount');
+const itemsContainer = document.querySelector('#items');
 
 // dodaj produkty do tabeli
-const itemsContainer = document.querySelector('#items');
 function addItem(item) {
   itemsContainer.innerHTML += `<tr>
           <td><button class="delete">x</button></td>
@@ -21,19 +21,11 @@ addItem(product1);
 addItem(product2);
 
 // usuwanie wierszy
-const deleteButtons = document.querySelectorAll('.delete');
-for (let i = 0; i < deleteButtons.length; i++) {
-  deleteButtons[i].addEventListener('click', removeRow);
-}
-
-const quantityInputs = document.querySelectorAll('.quantity');
-for (let i = 0; i < quantityInputs.length; i++) {
-  quantityInputs[i].addEventListener('change', removeRowFromQuantity);
-}
-
 function removeRow(e) {
-  const row = e.target.closest('tr');
-  row.remove();
+  if (e.target.tagName === 'BUTTON') {
+    const row = e.target.closest('tr');
+    row.remove();
+  }
 }
 function removeRowFromQuantity(e) {
   if (Number(e.target.value) === 0) {
@@ -73,6 +65,8 @@ calculatePrice();
 // listenery
 discountCheckbox.addEventListener('click', addDiscount);
 itemsContainer.addEventListener('click', markBg);
+itemsContainer.addEventListener('click', removeRow);
+itemsContainer.addEventListener('change', removeRowFromQuantity);
 
 // zaznacz checkbox na początku jeśli trzeba
 const discountShouldBeEnabled = +discountElement
