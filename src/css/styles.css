@@ -5,43 +5,19 @@ body {
   background-color: #fcfcfc;
   font-size: 16px;
 }
-.card-table {
-  background-color: #fff;
-  width: 100%;
-  border-spacing: 0;
+input {
+  max-width: 100px;
+  padding: 4px;
+  border: 1px solid #1d73d4;
+  background-color: #cff2ff;
 }
-.card-table th,
-.card-table td {
-  border: 1px solid #e5e5e5;
-  padding: 10px;
-}
-.card-table td input {
-  width: 30px;
-}
-.card-table th {
-  background-color: #ededed;
-}
-.discount {
-  border: 1px solid #3bc53b;
+button {
+  border: 1px solid #3b86db;
   padding: 4px 8px;
-  background-color: #b9f3b9;
-}
-.hidden {
-  display: none;
-}
-.marked {
-  background-color: #faebd7;
-}
-.delete {
-  background: none;
-  border: 0;
-  font-size: 18px;
-  color: grey;
+  background-color: #51abef;
+  color: #fff;
   cursor: pointer;
 }
-input {
-  padding: 6px;
-  border: 0;
-  border-bottom: 3px solid #dbdbdb;
-  background-color: #f1f1f1;
+.marked {
+  background-color: #1768a2;
 }

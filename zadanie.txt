@@ -1,0 +1,11 @@
+Przygotuj konwerter jednostek:
+
+1) przygotować szkielet HTML i plik JS + ew. CSS
+2) przygotować 2 inputy (jeden na wpisanie wartości, drugi na wynik)
+3) przygotować inputy z wyborem konwertera (godziny/minuty, kilometry/mile) - (wybrany powinien być oznaczony - inne stylowanie / klasa css)
+4) podpiąć listenery pod ww buttony (korzystając z propagacji eventow)
+5) przygotować button: "Przelicz", który pokaże wynik
+6) przygotować 2 buttony "w prawo", "w lewo", które określą kierunek konwersji (wybrany powinien być oznaczony)
+7) pod buttony kierunków i wyniku podpiąć "tradycyjny" listener
+8) pomiędzy inputami powinna być strzałka z kierunkiem konwersji (zastosuj .innerText)
+9) jeśli zaznczone jest "w prawo" to użytkownik powinien wpisać wartość w lewym inpucie a wynim w wyświetlić się w prawym, jeśli zaznaczone jest "w lewo" to odwrotnie
