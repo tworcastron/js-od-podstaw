@@ -1,0 +1,10 @@
+Przygotuj grę "Saper":
+
+1) pobierz szkielet HTML (link w opisie odcinka)
+2) podepnij listenery pod wszystkie pola (korzystając z propagacji eventów)
+3) wszystkie pola domyślnie są ukryte (CSS)
+4) po kliknięciu w pole jest ono pokazywane (CSS)
+5) jeśli
+  a) pole ma punkty - dodaj do puli punktów (data-points)
+  b) pole jest bombą - pokaż wiadomość "Koniec gry"
+6) w momencie uzyskania 150 punktów wyświetl wiadomość "Wygrałeś!"
