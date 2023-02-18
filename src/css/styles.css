@@ -16,7 +16,7 @@ table td {
 }
 table td div {
   cursor: pointer;
-  /* opacity: 0; */
+  opacity: 0;
 }
 .bomb {
   background-color: #f44343;
