@@ -1,7 +1,16 @@
-const animals = ['dog', 'cat', 'mouse'];
+Object.prototype.test = 'cos tam';
 
-for (const value of animals) {
-  console.log(value);
-}
+const user = { name: 'Jane', age: 24 };
 
-// animals.forEach(value => console.log(value));
+// for (const key in user) {
+//   console.log(key);
+//   if (user.hasOwnProperty(key)) {
+//     console.log(user[key]);
+//   }
+// }
+
+console.log(Object.values(user));
+// entries, values, keys
+Object
+  .keys(user)
+  .forEach(value => console.log(value));
