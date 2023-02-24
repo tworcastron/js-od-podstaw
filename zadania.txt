@@ -10,7 +10,7 @@
   - której reszta z dzielenia przez 13 = 0 (x % 13 === 0)
   - jest większa niż 40
 
-5) Wykonsoluj obiekt { name: Jane, age: 24 } `
+5) Wykonsoluj obiekt { name: 'Jane', age: 24 } `
     Pole "name" = Jane
     Pole "age" = 24
   `
