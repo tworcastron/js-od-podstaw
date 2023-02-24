@@ -1,0 +1,18 @@
+1) Wypisz liczby parzyste od 2 do 20 (for)
+  - a) continue
+  - b) bez continue
+
+2) Oblicz sumę liczb od 1 do 100 (for)
+
+3) Odwróć tekst wpisany przez prompt, np. "Jan" -> "naJ" (for)
+
+4) Znajdź liczbę: (while, break)
+  - której reszta z dzielenia przez 13 = 0 (x % 13 === 0)
+  - jest większa niż 40
+
+5) Wykonsoluj obiekt { name: Jane, age: 24 } `
+    Pole "name" = Jane
+    Pole "age" = 24
+  `
+  a) for in
+  b) Object.entries, .forEach
