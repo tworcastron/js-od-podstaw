@@ -1,40 +1,21 @@
-// for...in (tablicach, tekstach, obiektach)
-// - leci po indeksach/kluczach
-// - enumerable
+// const numbers = [10, 20, 30, 40, 50];
+// let sum = 0;
+// let i = 0;
 
-// for...of (tablicach, tekstach)
-// - leci po wartościach
-// - iterable
-
-// enumerable - policzalny
-// iterować - powtarzać w pętli
-
-const user = { name: 'Jane', age: 20 };
-const animals = ['dog', 'cat', 'mouse'];
-const text = 'to jest tekst';
-
-// user.lastName = 'Kowalski'
-// Object.defineProperty(user, 'lastName', {
-//   value: 'Kowalski',
-//   enumerable: false,
-// });
-// console.log(user.lastName);
-
-// for (const key in user) {
-//   console.log(key, user[key]);
-// }
-// for (const value of user) {
-//   console.log(value);
-// }
-// for (const key in animals) {
-//   console.log(key, animals[key]);
-// }
-// for (const value of animals) {
-//   console.log(value);
+// while (sum < 100) {
+//   console.log('Dodaj ', numbers[i]);
+//   sum += numbers[i];
+//   i++;
 // }
 
-// console.log(animals[Symbol.iterator]);
-// console.log(user[Symbol.iterator]);
+// console.log(sum);
 
-// console.log(user.propertyIsEnumerable('lastName'));
-// console.log(Object.getOwnPropertyDescriptor(user, 'lastName'));
+// ----------
+const correctPassord = 'tajne1234';
+let passord = 'tajne1234';
+
+while (passord !== correctPassord) {
+  passord = window.prompt('Podaj hasło:');
+}
+
+console.log(passord);
