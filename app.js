@@ -14,8 +14,6 @@
 const correctPassord = 'tajne1234';
 let passord = 'tajne1234';
 
-while (passord !== correctPassord) {
+do {
   passord = window.prompt('Podaj hasło:');
-}
-
-console.log(passord);
+} while (passord !== correctPassord);
