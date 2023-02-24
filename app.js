@@ -1,19 +1,27 @@
-// const numbers = [10, 20, 30, 40, 50];
-// let sum = 0;
-// let i = 0;
+const numbers = [10, 20, 30, 40, 50];
+let sum = 0;
+let i = 0;
 
-// while (sum < 100) {
-//   console.log('Dodaj ', numbers[i]);
-//   sum += numbers[i];
-//   i++;
-// }
+while (true) {
+  console.log('Dodaj ', numbers[i]);
+  sum += numbers[i];
 
-// console.log(sum);
+  if (sum >= 100) {
+    break;
+  }
+  i++;
+}
 
-// ----------
-const correctPassord = 'tajne1234';
-let passord = 'tajne1234';
+console.log(sum);
 
-do {
-  passord = window.prompt('Podaj hasło:');
-} while (passord !== correctPassord);
+// -------------
+
+for (let i = 0; i < 10; i++) {
+  if (i === 5) {
+    continue;
+  }
+
+  console.log(i);
+}
+
+// continue, break
