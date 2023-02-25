@@ -1,11 +1,19 @@
-// const - nie można zmieniać [zasięg bloku]
-// let - można zmieniać [zasięg bloku]
-// var - można zmieniać (starszy zapis) [zasięg kontektsu]
+// hoisting - przenoszenie deklaracji zmiennych/funkcji na górę zakresu
+// let i const jest pomijane w hoistingu
 
-// scope - zasięg zmiennych
 
-// user
-// age
+functionA()
+// functionB()
+// functionC()
 
-const age = 21;
-var user = 'Jan';
+function functionA() {
+  var a
+
+  a
+  a = 'a'
+
+  return 'cos'
+}
+var functionB = () => {}
+var functionC = function() {}
+
