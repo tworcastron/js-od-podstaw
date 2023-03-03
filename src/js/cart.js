@@ -1,7 +1,30 @@
-const product1 = { price: 10, title: 'JS od podstaw' };
-const product2 = { price: '20', title: 'PHP od podstaw' };
-const discount = 10;
-let discountEnabled = false;
+const cart = {
+  price: 0,
+  getPrice() {
+    this.price = 0;
+    this.items.forEach(item => this.price += item.price);
+    this.price -= this.getDiscountIfEnabled();
+    return this.price;
+  },
+  getDiscount() {
+    return this.discount.amount;
+  },
+  getDiscountIfEnabled() {
+    if (this.discount.enabled) {
+      return this.getDiscount();
+    } else {
+      return 0;
+    }
+  },
+  discount: {
+    amount: 10,
+    enabled: false,
+  },
+  items: [
+    { price: 10, title: 'JS od podstaw' },
+    { price: 20, title: 'PHP od podstaw' },
+  ],
+}
 
 // definicja elementow
 const discountElement = document.querySelector('#discount');
@@ -17,8 +40,9 @@ const addItem = (item) => {
           <td>${item.price}</td>
         </tr>`;
 }
-addItem(product1);
-addItem(product2);
+for (const item of cart.items) {
+  addItem(item);
+}
 
 // usuwanie wierszy
 const removeRow = (e) => {
@@ -43,9 +67,11 @@ const markBg = (e) => {
 
 // dodaj zniżke
 const addDiscount = (e) => {
-  discountEnabled = e.target.checked;
-  if (discount > 0) {
-    document.querySelector('#discount-amount').innerHTML = -discount;
+  cart.discount.enabled = e.target.checked;
+  if (cart.getDiscount() > 0) {
+    document
+      .querySelector('#discount-amount')
+      .innerHTML = -cart.getDiscount();
     discountElement.classList.toggle('hidden');
   }
   calculatePrice();
@@ -53,11 +79,7 @@ const addDiscount = (e) => {
 
 // cena całkowita
 const calculatePrice = () => {
-  let total = Number(product1.price) + Number(product2.price);
-  if (discountEnabled) {
-    total -= discount;
-  }
-
+  let total = cart.getPrice();
   document.querySelector('#total-price').innerHTML = total;
 }
 calculatePrice();
