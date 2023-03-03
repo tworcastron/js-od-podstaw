@@ -1,27 +1,29 @@
-// switch
-const color = 'azure';
+// zasięg globalny/funkcja - this = window/global
+// jeśli funkcja w obiekcie (ale nie strzałkowa) - this = obiekt
 
-// if (color === 'green') {
-// 	console.log('zielony');
-// } else if (color === 'red') {
-// 	console.log('czerwony');
-// }else if (color === 'blue' || color === 'azure') {
-// 	console.log('niebieski');
-// } else {
-// 	console.log('brak koloru');
-// }
+// ...ale może być być ustawiony "ręcznie"
 
-switch (color) {
-  case 'green':
-    console.log('zielony');
-    break;
-  case 'red':
-    console.log('czerwony');
-    break;
-  case 'blue':
-  case 'azure':
-    console.log('niebieski');
-    break;
-  default:
-    console.log('brak koloru');
+// this 
+
+const cart = {
+  price: 12,
+  // showPrice() {
+  //   const someFunc = () => {
+  //     console.log(this.price);
+  //   }
+  //   someFunc();
+  // },
+  showPrice() {
+    const totalPrice = this.price - this.discount.amount;
+    console.log(totalPrice);
+  },
+  discount: {
+    amount: 10,
+    getDiscount: function() {
+      console.log(this.amount);
+    }
+  },
 }
+
+//...
+cart.showPrice();
