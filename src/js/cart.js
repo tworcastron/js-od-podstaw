@@ -66,12 +66,12 @@ const markBg = (e) => {
 }
 
 // dodaj zniżke
-const addDiscount = (e) => {
-  cart.discount.enabled = e.target.checked;
-  if (cart.getDiscount() > 0) {
+const addDiscount = function(e) {
+  this.discount.enabled = e.target.checked;
+  if (this.getDiscount() > 0) {
     document
       .querySelector('#discount-amount')
-      .innerHTML = -cart.getDiscount();
+      .innerHTML = -this.getDiscount();
     discountElement.classList.toggle('hidden');
   }
   calculatePrice();
@@ -85,7 +85,7 @@ const calculatePrice = () => {
 calculatePrice();
 
 // listenery
-discountCheckbox.addEventListener('click', addDiscount);
+discountCheckbox.addEventListener('click', addDiscount.bind(cart));
 itemsContainer.addEventListener('click', markBg);
 itemsContainer.addEventListener('click', removeRow);
 itemsContainer.addEventListener('change', removeRowFromQuantity);
