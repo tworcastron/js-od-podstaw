@@ -22,12 +22,22 @@ function createCart() {
 const cart = createCart();
 console.log(cart);
 
+// funckja ktora obsluzy kolor buttona
+const addClass = (className, text) => {
+  return (element) => {
+    element.classList.add(className);
+    element.innerText = text;
+  }
+}
+const addClassInCart = addClass('in-cart', 'Dodano');
+
 // obsługa buttona
 const addToCartHandler = (e) => {
   if (e.target.tagName !== 'BUTTON') return;
   const title = e.target.dataset.title;
   const price = Number(e.target.dataset.price);
   cart.add(title, price); // argumenty
+  addClassInCart(e.target);
 }
 
 // listenery
