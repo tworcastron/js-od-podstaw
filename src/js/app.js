@@ -1,44 +1,32 @@
-// definicja elementow
-const coursesList = document.querySelector('.coursers-list');
-const counter = document.querySelector('.counter');
+// callback
 
-function createCart() {
-  // // lista produktów
-  const items = [];
+// asynchroniczna
+// const prepareMeal = (callback) => {
+//   setTimeout(() => {
+//     console.log('zbieranie składniów');
+//     console.log('przygotowywanie');
+//     callback();
+//   }, 2000);
+// }
+// const notify = () => {
+//   console.log('Danie gotowe!');
+// }
 
-  const refreshProductsCount = () => counter.innerText = items.length;
+// prepareMeal(notify);
 
-  const add = (title, price, quantity = 1) => { // parametry
-    items.push({ title, price, quantity });
-    refreshProductsCount();
-    console.log(items);
-  }
 
-  return {
-    add,
-  };
+const add = (a, b) => a + b;
+const sub = (a, b) => a - b;
+
+const doSmthWithNumber = (x, y, callback) => {
+  console.log(callback(x, y));
 }
 
-const cart = createCart();
-console.log(cart);
+doSmthWithNumber(2, 5, add);
+doSmthWithNumber(2, 5, sub);
 
-// funckja ktora obsluzy kolor buttona
-const addClass = (className, text) => {
-  return (element) => {
-    element.classList.add(className);
-    element.innerText = text;
-  }
-}
-const addClassInCart = addClass('in-cart', 'Dodano');
 
-// obsługa buttona
-const addToCartHandler = (e) => {
-  if (e.target.tagName !== 'BUTTON') return;
-  const title = e.target.dataset.title;
-  const price = Number(e.target.dataset.price);
-  cart.add(title, price); // argumenty
-  addClassInCart(e.target);
-}
-
-// listenery
-coursesList.addEventListener('click', addToCartHandler);
+// const callback = (a) => {
+//   return this.price += item.price;
+// }
+// this.items.forEach(callback);
