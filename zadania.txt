@@ -1,0 +1,34 @@
+///////////////////////
+// Zadania z funkcji //
+///////////////////////
+
+1. Napisz funkcję, która wyświetla 'You know nothing ${this.name} ${this.lastName}',
+a następnie ją uruchom ustawiając kontekst na obiekt user.
+
+  const user = {
+    name: 'Jon',
+    lastName: 'Snow',
+  };
+
+
+2. Napisz 2 funkcje callback, które zwrócą wyniki jak poniżej:
+
+  const address = { city: 'Lublin', street: 'Lekka' }
+
+  showAddress(address, cb1) // 'Mieszkasz w mieście "Lublin" na ulicy "Lekka"'
+  showAddress(address, cb2) // 'Miasto: Lublin, ulica: Lekka'
+
+
+3. Napisz funkcje, która zwraca funkcje, której użycie będzie wyglądało jak poniżej:
+
+  const sayHi = say('Hi')
+  const sayHello = say('Hello')
+
+  sayHi('Janek') // 'Hi Janek!'
+  sayHello('Janek') // 'Hello Janek!'
+
+
+4. Napisz funkcję rekurencyjną do potęgowania: 
+
+  exp(2, 2) // 4 (2*2) 
+  exp(2, 3) // 8 (2*2*2) 
