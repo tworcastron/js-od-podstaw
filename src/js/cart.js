@@ -2,10 +2,8 @@
 (function () {
   const cart = {
     price: 0,
-    getPrice() {
-      this.price = 0;
-      this.items.forEach(item => this.price += item.price);
-      this.price -= this.getDiscountIfEnabled();
+    getPrice(cb) {
+      this.price = cb(this.items, this.getDiscountIfEnabled());
       return this.price;
     },
     getDiscount() {
@@ -80,10 +78,28 @@
     }
     calculatePrice();
   }
+
+  // 2 sposoby liczenia ceny
+  const getPriceRegularClient = (items, discount) => {
+    let price = 0;
+    items.forEach(item => price += item.price);
+    price -= discount;
+    return price;
+  }
+  const getPriceSuperClient = (items, discount) => {
+    let price = 0;
+    items.forEach(item => price += (item.price - 1));
+    price -= discount;
+    return price;
+  }
   
   // cena całkowita
   const calculatePrice = () => {
-    let total = cart.getPrice();
+    const superClient = false;
+    let cb = getPriceRegularClient;
+    if (superClient) cb = getPriceSuperClient;
+
+    let total = cart.getPrice(cb);
     document.querySelector('#total-price').innerHTML = total;
   }
   calculatePrice();
