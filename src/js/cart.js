@@ -42,7 +42,6 @@
     addItem(item);
   }
   
-  
   // dodaj produkty do tabeli
   function addItem(item) {
     itemsContainer.innerHTML += `<tr data-course-id="${item.id}">
