@@ -81,14 +81,11 @@
 
   // 2 sposoby liczenia ceny
   const getPriceRegularClient = (items, discount) => {
-    let price = 0;
-    items.forEach(item => price += item.price);
-    price -= discount;
+    const price = items.reduce((acc, item) => acc + item.price, -discount);
     return price;
   }
   const getPriceSuperClient = (items, discount) => {
-    let price = 0;
-    items.forEach(item => price += (item.price - 1));
+    let price = items.reduce((acc, item) => acc + item.price, 0);
     price -= discount;
     return price;
   }
