@@ -8,14 +8,21 @@ function createCart() {
 
   const refreshProductsCount = () => counter.innerText = items.length;
 
-  const add = (title, price, quantity = 1) => { // parametry
-    items.push({ title, price, quantity });
+  const add = (id, title, price, quantity = 1) => { // parametry
+    items.push({ id, title, price, quantity });
     refreshProductsCount();
     console.log(items);
   }
 
+  const remove = (id) => {
+    const index = items.findIndex(item => item.id === id);
+    console.log(items[index]);
+    // usuniecie kursu z tablicy items
+  }
+
   return {
     add,
+    remove,
   };
 }
 
@@ -23,21 +30,31 @@ const cart = createCart();
 // console.log(cart);
 
 // funckja ktora obsluzy kolor buttona
-const addClass = (className, text) => {
+const toggleClass = (className, text, mode) => {
+  // mode = 'add', 'remove'
   return (element) => {
-    element.classList.add(className);
+    element.classList[mode](className);
     element.innerText = text;
   }
 }
-const addClassInCart = addClass('in-cart', 'Dodano');
+const addClassInCart = toggleClass('in-cart', 'Usuń z koszyka', 'add');
+const removeClassInCart = toggleClass('in-cart', 'Dodaj do koszyka', 'remove');
 
 // obsługa buttona
 const addToCartHandler = (e) => {
   if (e.target.tagName !== 'BUTTON') return;
   const title = e.target.dataset.title;
   const price = Number(e.target.dataset.price);
-  cart.add(title, price); // argumenty
-  addClassInCart(e.target);
+  const id = Number(e.target.dataset.id);
+
+
+  if (e.target.classList.contains('in-cart')) {
+    cart.remove(id);
+    removeClassInCart(e.target);
+  } else {
+    cart.add(id, title, price); // argumenty
+    addClassInCart(e.target);
+  }
 }
 
 // listenery
