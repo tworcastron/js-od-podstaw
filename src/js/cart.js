@@ -4,6 +4,8 @@
     price: 0,
     getPrice(cb) {
       this.price = cb(this.items, this.getDiscountIfEnabled());
+      if (this.price < 0) this.price = 0;
+
       return this.price;
     },
     getDiscount() {
@@ -19,8 +21,7 @@
     removeCourse(id) {
       console.log(id);
       const index = this.items.findIndex(item => item.id === id);
-      console.log(this.items[index]);
-      // usuniecie kursu z tablicy this.items
+      this.items.splice(index, 1);
     },
     discount: {
       amount: 10,
@@ -58,6 +59,7 @@
       const row = e.target.closest('tr');
       cart.removeCourse(Number(row.dataset.courseId));
       row.remove();
+      calculatePrice();
     }
   }
   const removeRowFromQuantity = (e) => {
@@ -65,6 +67,7 @@
       const row = e.target.closest('tr');
       cart.removeCourse(Number(row.dataset.courseId));
       row.remove();
+      calculatePrice();
     }
   }
   

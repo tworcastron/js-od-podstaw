@@ -16,8 +16,8 @@ function createCart() {
 
   const remove = (id) => {
     const index = items.findIndex(item => item.id === id);
-    console.log(items[index]);
-    // usuniecie kursu z tablicy items
+    items.splice(index, 1);
+    refreshProductsCount();
   }
 
   return {
