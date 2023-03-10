@@ -16,13 +16,19 @@
         return 0;
       }
     },
+    removeCourse(id) {
+      console.log(id);
+      const index = this.items.findIndex(item => item.id === id);
+      console.log(this.items[index]);
+      // usuniecie kursu z tablicy this.items
+    },
     discount: {
       amount: 10,
       enabled: false,
     },
     items: [
-      { price: 10, title: 'JS od podstaw' },
-      { price: 20, title: 'PHP od podstaw' },
+      { id: 1, price: 10, title: 'JS od podstaw' },
+      { id: 2, price: 20, title: 'PHP od podstaw' },
     ],
   }
   
@@ -38,7 +44,7 @@
   
   // dodaj produkty do tabeli
   function addItem(item) {
-    itemsContainer.innerHTML += `<tr>
+    itemsContainer.innerHTML += `<tr data-course-id="${item.id}">
             <td><button class="delete">x</button></td>
             <td>${item.title}</td>
             <td><input class="quantity" type="number" value="1"></td>
@@ -50,12 +56,14 @@
   const removeRow = (e) => {
     if (e.target.tagName === 'BUTTON') {
       const row = e.target.closest('tr');
+      cart.removeCourse(Number(row.dataset.courseId));
       row.remove();
     }
   }
   const removeRowFromQuantity = (e) => {
     if (Number(e.target.value) === 0) {
       const row = e.target.closest('tr');
+      cart.removeCourse(Number(row.dataset.courseId));
       row.remove();
     }
   }
