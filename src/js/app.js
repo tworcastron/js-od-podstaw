@@ -1,14 +1,25 @@
-// find, findIndex
+const numbers = [1, 2, 3, 4, 5];
 
-const users = [
-  { id: 1, name: 'Adam' },
-  { id: 2, name: 'Janek' },
-  { id: 3, name: 'Ola' },
-];
-// const element = users.find(x => x.name === 'Ola');
-// const index = users.findIndex(x => x.name === 'Ola');
+// dodawanie elementu do tablicy
+// numbers.push(6, 7, 8); // na końcu
+// numbers.unshift(10, 11); // na początku
 
-console.log(users[users.length - 1]);
-console.log(users.at(-1));
-// console.log(users.pop()); // UWAGA! usuwa element z tablicy
-console.log([2,4,7].includes(1));
+// pobieranie elementu z tablic (modyfikuje tablice)
+// numbers.pop(); // ostatni element
+// numbers.shift(); // pierszy element
+
+// pobieram kawałek tablicy
+// numbers.slice(1, -2);
+
+// wycina kawałek tablicy
+// numbers.splice(3, 1);
+
+// nadapisanie kawałek tablicy
+// numbers.splice(3, 1, 'nowe');
+
+// połączenie tablic
+// numbers.concat([10, 11, 12]);
+// [...numbers, 10, 11, 12];
+
+// połączenie tablicy w string
+// numbers.join(';');
