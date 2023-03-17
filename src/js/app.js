@@ -1,24 +1,10 @@
-// sort, reverse
+// const array = [
+//   { id: 1, price: 30, title: 'JS od podstaw', available: true, },
+//   { id: 2, price: 20, title: 'PHP od podstaw', available: false },
+// ];
+const array = [1,3,4,5,6];
 
-// const array = ['Ola', 'Janek', 'Adam'];
-// const array = [656, 10000, 35];
-const array = [
-  { title: 'JS', price: 90 },
-  { title: 'PHP', price: 20 },
-];
+// const filtered = array.filter(value => value.available);
+const filtered = array.filter(value => value > 4);
 
-// array.sort((a, b) => a - b);
-// array.sort((a, b) => {
-// if (a < b) {
-//   return -1;
-// }
-// if (a > b) {
-//   return 1;
-// }
-// return 0;
-// });
-// array.reverse();
-
-array.sort((a, b) => a.price - b.price);
-
-console.log(array);
+console.log(filtered);
