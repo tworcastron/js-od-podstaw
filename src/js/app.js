@@ -1,10 +1,20 @@
-// const array = [
-//   { id: 1, price: 30, title: 'JS od podstaw', available: true, },
-//   { id: 2, price: 20, title: 'PHP od podstaw', available: false },
-// ];
-const array = [1,3,4,5,6];
+// destrukturyzacja
 
-// const filtered = array.filter(value => value.available);
-const filtered = array.filter(value => value > 4);
+const array = ['JS od podstaw', 99];
+// const title = array[0];
+// const price = array[1];
 
-console.log(filtered);
+// const [title, price] = array;
+
+// console.log(title);
+// console.log(price);
+
+const obj = {
+  title: 'PHP od podstaw',
+  price: 40,
+}
+
+// const title = obj.title;
+// const price = obj.price;
+
+// const { title, price } = obj;
