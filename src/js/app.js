@@ -1,20 +1,25 @@
-// destrukturyzacja
+// const users = ['Ola', 'Janek', 'Adam'];
+// const copyUsers = [...users];
 
-const array = ['JS od podstaw', 99];
-// const title = array[0];
-// const price = array[1];
+// users[0] = 'Ania';
 
-// const [title, price] = array;
+// console.log(users);
+// console.log(copyUsers);
 
-// console.log(title);
-// console.log(price);
+const users = [
+	{ name: 'Ola', age: 30 },
+	{ name: 'Janek', age: 23 },
+	{ name: 'Adam', age: 25 },
+];
+// shallow copy, deep copy
+// const copyUsers = [
+//   { ...users[0] },
+//   { ...users[1] },
+//   { ...users[2] },
+// ];
+const copyUsers = JSON.parse(JSON.stringify(users));
 
-const obj = {
-  title: 'PHP od podstaw',
-  price: 40,
-}
+users[0].name = 'Ania';
 
-// const title = obj.title;
-// const price = obj.price;
-
-// const { title, price } = obj;
+console.log(users);
+console.log(copyUsers);
