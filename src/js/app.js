@@ -1,11 +1,24 @@
-const array = [1,2,3,4]
-// const array = new Array(10);
-// console.log(array.fill(1, 4, 8));
+// sort, reverse
 
-const users = [
-  { name: 'Adam' },
-  { name: 'Janek' },
-  { name: 'Ola' },
-]
+// const array = ['Ola', 'Janek', 'Adam'];
+// const array = [656, 10000, 35];
+const array = [
+  { title: 'JS', price: 90 },
+  { title: 'PHP', price: 20 },
+];
 
-console.log(users.map(user => user.name).join(','));
+// array.sort((a, b) => a - b);
+// array.sort((a, b) => {
+// if (a < b) {
+//   return -1;
+// }
+// if (a > b) {
+//   return 1;
+// }
+// return 0;
+// });
+// array.reverse();
+
+array.sort((a, b) => a.price - b.price);
+
+console.log(array);

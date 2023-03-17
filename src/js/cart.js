@@ -28,7 +28,7 @@
       enabled: false,
     },
     items: [
-      { id: 1, price: 10, title: 'JS od podstaw' },
+      { id: 1, price: 30, title: 'JS od podstaw' },
       { id: 2, price: 20, title: 'PHP od podstaw' },
     ],
   }
@@ -38,6 +38,9 @@
   const discountCheckbox = document.querySelector('#add-discount');
   const itemsContainer = document.querySelector('#items');
   
+  // sortowanie wg ceny
+  cart.items.sort((a, b) => a.price - b.price);
+
   for (const item of cart.items) {
     addItem(item);
   }
