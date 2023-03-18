@@ -9,7 +9,7 @@ function createCart() {
   const refreshProductsCount = () => counter.innerText = items.length;
 
   const add = (id, title, price, quantity = 1) => { // parametry
-    items.push({ id, titlee, price, quantity });
+    items.push({ id, title, price, quantity });
     refreshProductsCount();
     console.log(items);
   }
