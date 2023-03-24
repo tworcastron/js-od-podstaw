@@ -12,3 +12,10 @@ const dateNumber = 1679655443862;
 
 const now2 = new Date(dateText)
 const now3 = new Date(dateNumber)
+
+
+now //?
+now.setDate(now.getDate() + 10)
+now.setHours(10)
+
+now

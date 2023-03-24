@@ -1,5 +1,10 @@
 (() => {
-  const endTime = '2023-03-24T14:54:00Z';
+  // const endTime = '2023-03-24T14:54:00Z';
+  const date = new Date();
+  date.setHours(date.getHours() + 1);
+  date.setMinutes(date.getMinutes() + 35);
+
+  const endTime = date.toISOString();
   const counter = document.querySelector('#promotion-counter');
 
   const getSecondsUntillDate = (date) => {
