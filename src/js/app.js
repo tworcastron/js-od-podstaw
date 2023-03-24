@@ -1,21 +1,21 @@
-const now = new Date()
+// zaokrąglenie
+Math.floor(2.67) //?
 
-// timestamp
-// ilość milisekund od 01.01.1970
-now.getTime() //?
+parseInt(2.67) //?
+Number('2.67').toFixed(10) //?
 
-// ISO
-now.toISOString() //?
+Math.ceil(2.17) //?
+Math.round(2.65) //?
+Math.round(2.15) //?
 
-const dateText = "2023-03-24T09:57:15.538Z";
-const dateNumber = 1679655443862;
+// wartość losowa
+Math.random() //?
+// 0-100
+Math.floor(Math.random() * 100) //?
 
-const now2 = new Date(dateText)
-const now3 = new Date(dateNumber)
+// wyszukiwanie w tablicy
+const numbers = [4, 5, 12, 2, 93, 23];
+Math.min(...numbers); //?
+Math.max(...numbers); //?
 
-
-now //?
-now.setDate(now.getDate() + 10)
-now.setHours(10)
-
-now
+Math.PI //?
