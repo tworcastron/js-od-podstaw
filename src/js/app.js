@@ -1,18 +1,36 @@
-"use strict";
+const now = new Date() //?
+now.getFullYear() //?
+now.getDate() //?
+now.getMonth() //?
+// 0 - styczen
+// 11 - grudzien
+now.getDay() //?
+// 0 - niedziela
+// 1 - poniedzialek
+// 6 - sobota
+now.getHours() //?
+now.getMinutes() //?
+now.getSeconds() //?
+now.getMilliseconds() //?
 
-// const setX = () => {
-//   x = 10;
-// }
-// setX();
+;`${now.getHours()} : ${now.getMinutes()}` //?
 
-// let public = 21
-// let private = 21
-// let static = 21
-// let interface = 21
+// UTC
+now.getUTCHours() //?
+now.getUTCDay() //?
 
-// function x() {}
-// delete x;
+// timestamp
+// ilość milisekund od 01.01.1970
+now.getTime() //?
+Date.now() //?
 
-// function sum(a, a, c) {
-//   return a + a + c;
-// }
+now.toISOString() //?
+
+// wyświetlenie
+now.toLocaleDateString('pl') //?
+now.toLocaleString('pl', {
+  dateStyle: 'full',
+  timeStyle: 'long',
+}) //?
+
+// GTM - czas uniwersalny = UTC
