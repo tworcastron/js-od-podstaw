@@ -111,3 +111,9 @@ input {
   max-width: 980px;
   margin: 0 auto;
 }
+.promotion {
+  background-color: #b7ebb7;
+  border: 2px dashed #30b930;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
