@@ -1,3 +1,5 @@
+"use strict";
+
 // definicja elementow
 const coursesList = document.querySelector('.coursers-list');
 const counter = document.querySelector('.counter');
@@ -9,7 +11,6 @@ function createCart() {
   const refreshProductsCount = () => counter.innerText = items.length;
 
   const add = (id, title, price, quantity = 1) => { // parametry
-    debugger;
     items.push({ id, title, price, quantity });
     refreshProductsCount();
     console.log(items);

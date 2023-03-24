@@ -1,3 +1,5 @@
+"use strict";
+
 // IIFE
 (function () {
   const cart = {
