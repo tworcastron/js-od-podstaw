@@ -1,36 +1,14 @@
-const now = new Date() //?
-now.getFullYear() //?
-now.getDate() //?
-now.getMonth() //?
-// 0 - styczen
-// 11 - grudzien
-now.getDay() //?
-// 0 - niedziela
-// 1 - poniedzialek
-// 6 - sobota
-now.getHours() //?
-now.getMinutes() //?
-now.getSeconds() //?
-now.getMilliseconds() //?
-
-;`${now.getHours()} : ${now.getMinutes()}` //?
-
-// UTC
-now.getUTCHours() //?
-now.getUTCDay() //?
+const now = new Date()
 
 // timestamp
 // ilość milisekund od 01.01.1970
 now.getTime() //?
-Date.now() //?
 
+// ISO
 now.toISOString() //?
 
-// wyświetlenie
-now.toLocaleDateString('pl') //?
-now.toLocaleString('pl', {
-  dateStyle: 'full',
-  timeStyle: 'long',
-}) //?
+const dateText = "2023-03-24T09:57:15.538Z";
+const dateNumber = 1679655443862;
 
-// GTM - czas uniwersalny = UTC
+const now2 = new Date(dateText)
+const now3 = new Date(dateNumber)
