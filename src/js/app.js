@@ -1,22 +1,12 @@
-'JS jest super'.toUpperCase() //?
-'JS jest super'.toLowerCase() //?
+const d = new Date();
+d.setHours(d.getHours() + 1);
+const utc = d.toUTCString();
 
-'    JS jest super   '.trim() //?
+document.cookie = 'username=Adam; expires=' + utc;
 
-'JS jest super'.indexOf('j') //?
+// UTC:
+// Dzień tygodnia, DD Miesiąc RRRR GG:MM:SS GMT
 
-'JS jest super'.slice(3) //?
-'JS jest super'.slice(3, 7) //?
+// console.log(document.cookie.split('; '));
 
-'JS jest super'.split('super'); //?
-['JS', 'jest', 'super'].join('-') //?
-
-'JS jest super'.length //?
-
-'JS jest super super'.replace('super', 'mega') //?
-'JS jest super super'.replaceAll('super', 'mega') //?
-
-'JS jest super'.includes('jest') //?
-
-'JS jest super'.startsWith('JS') //?
-'JS jest super'.endsWith('super') //?
+// 4096 bajtów (4 kilobajty)
