@@ -1,21 +1,22 @@
-// zaokrąglenie
-Math.floor(2.67) //?
+'JS jest super'.toUpperCase() //?
+'JS jest super'.toLowerCase() //?
 
-parseInt(2.67) //?
-Number('2.67').toFixed(10) //?
+'    JS jest super   '.trim() //?
 
-Math.ceil(2.17) //?
-Math.round(2.65) //?
-Math.round(2.15) //?
+'JS jest super'.indexOf('j') //?
 
-// wartość losowa
-Math.random() //?
-// 0-100
-Math.floor(Math.random() * 100) //?
+'JS jest super'.slice(3) //?
+'JS jest super'.slice(3, 7) //?
 
-// wyszukiwanie w tablicy
-const numbers = [4, 5, 12, 2, 93, 23];
-Math.min(...numbers); //?
-Math.max(...numbers); //?
+'JS jest super'.split('super'); //?
+['JS', 'jest', 'super'].join('-') //?
 
-Math.PI //?
+'JS jest super'.length //?
+
+'JS jest super super'.replace('super', 'mega') //?
+'JS jest super super'.replaceAll('super', 'mega') //?
+
+'JS jest super'.includes('jest') //?
+
+'JS jest super'.startsWith('JS') //?
+'JS jest super'.endsWith('super') //?
