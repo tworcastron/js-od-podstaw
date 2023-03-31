@@ -3,67 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS od podstaw</title>
-  <link rel="stylesheet" href="src/css/styles.css">
+  <title>Zadania - storage</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="navigation">
-    <ul class="navigation-list">
-      <li class="navigation-item">
-        <a href="index.html">Sklep</a>
-      </li>
-    </ul>
+  <h2>Zadania - storage</h2>
 
-    <div class="cart">
-      <a href="/koszyk.html" class="button">
-        Koszyk 
-        <span class="counter">0</span>
-      </a>
-    </div>
-  </nav>
+  <h3>1. Styl strony</h3>
+  <button id="theme-button">Jasny/Ciemny</button>
 
-
-  <div class="container">
-    <h2>Dostępne kursy:</h2>
-
-    <div class="promotion">
-      <p>Promocja na wszystkie kursy jeszcze przez:</p>
-      <p id="promotion-counter"></p>
-    </div>
-
-    <section class="coursers-list">
-      <div class="box">
-        <img src="src/img/php.jpg" alt="Kurs PHP">
-        <div class="box-body">
-          <p class="box-title">PHP od podstaw</p>
-          <p><b>Cena</b>: 99.02zł</p>
-          <button
-            class="button cart-button"
-            data-title="PHP od podstaw"
-            data-price="99.02"
-            data-id="1"
-          >Dodaj do koszyka</button>
-        </div>
-      </div>
+  <h3>2. Notatnik</h3>
   
-      <div class="box">
-        <img src="src/img/js.jpg" alt="Kurs JS">
-        <div class="box-body">
-          <p class="box-title">JS od podstaw</p>
-          <p><b>Cena</b>: 99.01zł</p>
-          <button
-            class="button cart-button"
-            data-title="JS od podstaw"
-            data-price="99.01"
-            data-id="2"
-          >Dodaj do koszyka</button>
-        </div>
-      </div>
-    </section>
-  </div>
+  <textarea id="editor-content"></textarea>
+    
 
-  <script src="src/js/home.js"></script>
-  <script src="src/js/app.js"></script>
-  <script src="src/js/counter.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
