@@ -3,33 +3,57 @@
 // definicja elementow
 const coursesList = document.querySelector('.coursers-list');
 const counter = document.querySelector('.counter');
+const buttonsCart = document.querySelectorAll('.cart-button');
 
 function createCart() {
   // // lista produktów
-  const items = [];
+  let items = [];
 
   const refreshProductsCount = () => counter.innerText = items.length;
+
+  const updateStore = () => {
+    // zapisać dane do localStorage
+    localStorage.setItem('items', JSON.stringify(items));
+  }
+
+  const setItems = newItems => {
+    items = newItems;
+    updateStore();
+    refreshProductsCount();
+  }
 
   const add = (id, title, price, quantity = 1) => { // parametry
     items.push({ id, title, price, quantity });
     refreshProductsCount();
-    console.log(items);
+    updateStore();
   }
 
   const remove = (id) => {
     const index = items.findIndex(item => item.id === id);
     items.splice(index, 1);
     refreshProductsCount();
+    updateStore();
+  }
+
+  const hasItem = (id) => {
+    return items.find(item => item.id === id);
   }
 
   return {
     add,
     remove,
+    setItems,
+    hasItem,
   };
 }
 
 const cart = createCart();
-// console.log(cart);
+
+const startItems = JSON.parse(localStorage.getItem('items'));
+if (startItems) {
+  cart.setItems(startItems);
+}
+
 
 // funckja ktora obsluzy kolor buttona
 const toggleClass = (className, text, mode) => {
@@ -50,7 +74,7 @@ const addToCartHandler = (e) => {
   const id = Number(e.target.dataset.id);
 
 
-  if (e.target.classList.contains('in-cart')) {
+  if (cart.hasItem(id)) {
     cart.remove(id);
     removeClassInCart(e.target);
   } else {
@@ -61,3 +85,10 @@ const addToCartHandler = (e) => {
 
 // listenery
 coursesList.addEventListener('click', addToCartHandler);
+
+// ustawić kolor buttonów domyślnie
+buttonsCart.forEach(button => {
+  if (cart.hasItem(+button.dataset.id)) {
+    addClassInCart(button);
+  }
+});
