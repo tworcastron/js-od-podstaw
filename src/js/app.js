@@ -1,4 +1,4 @@
-const onBuyClick = (e) => {
+const onSubmit = (e) => {
   e.preventDefault();
 
   const elements = document.querySelector("form").elements;
@@ -12,9 +12,8 @@ const onBuyClick = (e) => {
   console.log(values);
 }
 
-const buyButton = document.querySelector('#buy');
-buyButton.addEventListener('click', onBuyClick);
-
+// podpięcie formularza
+document.querySelector('form').addEventListener('submit', onSubmit);
 
 // wyswietlenie daty zamowienia
 const dateContianer = document.querySelector('#date');
