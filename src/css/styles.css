@@ -117,3 +117,23 @@ input {
   margin-bottom: 20px;
   padding: 0 10px;
 }
+.form-item {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.card {
+  background-color: #fff;
+  border: 1px solid #e2e2e2;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+@media (min-width: 800px) {
+  .summary {
+    display: flex;
+    gap: 20px;
+  }
+  .card {
+    width: 100%;
+  }
+}
