@@ -1,3 +1,21 @@
+const onBuyClick = (e) => {
+  e.preventDefault();
+
+  const elements = document.querySelector("form").elements;
+  const values = {
+    name: elements['name'].value,
+    email: elements['email'].value,
+    'email-confirm': elements['email-confirm'].value,
+    tel: elements['tel'].value,
+    payment: elements['payment'].value,
+  };
+  console.log(values);
+}
+
+const buyButton = document.querySelector('#buy');
+buyButton.addEventListener('click', onBuyClick);
+
+
 // wyswietlenie daty zamowienia
 const dateContianer = document.querySelector('#date');
 
