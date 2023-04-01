@@ -140,3 +140,14 @@ input {
     width: 100%;
   }
 }
+#errors {
+  padding: 0;
+}
+#errors li {
+  list-style-type: none;
+  background-color: #f45f5f;
+  border: 2px dashed red;
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 5px; 
+}
