@@ -1,0 +1,10 @@
+Obsłuż walidacje inputa:
+- walidacja powinna reagować na każdą literę
+- walidacja powinna reagować na opuszczenie pola
+- jeśli jest błąd dodaj do inputa klasę "wrong"
+- jeśli jest ok dodaj do inputa klasę "ok"
+- komunikat błędu powinien pojawić się w div#error
+
+Reguły walidacji:
+- pole wymagane
+- pole zawiera kod pocztowy (np. 22-600)
