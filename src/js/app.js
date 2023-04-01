@@ -34,6 +34,8 @@ const validateValues = (values) => {
   document.querySelector('#errors').innerHTML = errors
     .map(e => `<li>${e}</li>`)
     .join('');
+
+  return errors.length > 0;
 }
 
 const onSubmit = (e) => {
@@ -48,7 +50,11 @@ const onSubmit = (e) => {
     payment: elements['payment'].value,
   };
 
-  validateValues(values);
+  const hasErrors = validateValues(values);
+  if (!hasErrors) {
+    // wysłać dane na server
+    document.querySelector('#loading').style.display = 'flex';
+  }
 }
 
 // podpięcie formularza
