@@ -54,6 +54,11 @@ const onSubmit = (e) => {
   if (!hasErrors) {
     // wysłać dane na server
     document.querySelector('#loading').style.display = 'flex';
+
+    setTimeout(() => {
+      // przekierowanie
+      window.location.href = '/podziekowanie.html';
+    }, 3000);
   }
 }
 
