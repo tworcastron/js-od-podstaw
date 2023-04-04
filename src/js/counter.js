@@ -23,20 +23,21 @@
     const s = getSecondsUntillDate(endTime);
 
     counter.innerHTML = getTimerFormat(s);
-    // obiliczy ilosc sekud od teraz do czasu docelowego
-    // przygotować odpowiedni wzór licznika (h:m:s)
   }
 
   const date = new Date();
-  // date.setHours(date.getHours() + 1);
   date.setMinutes(date.getMinutes() + 1);
   const endTime = date.toISOString();
   // const endTime = '2023-03-24T14:54:00Z';
 
   runCounter(endTime);
 
-  setTimeout(() => {
+  const intervalId = setInterval(() => {
     runCounter(endTime);
+
+    if (Date.now() > date.getTime()) {
+      clearInterval(intervalId);
+    }
   }, 1000);
 
 })();
