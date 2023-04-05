@@ -86,8 +86,8 @@ const checkPromotionForOrder = (response) => {
   console.log('Order ID', orderId);
   return new Promise((res, rej) => {
     setTimeout(() => {
-      res(['kurs HTML za 50%!'])
-      // rej('Błąd serwera')
+      // res(['kurs HTML za 50%!'])
+      rej(new Error('Błąd serwera'))
     }, 2000);
   });
 }
@@ -117,10 +117,14 @@ checkProducts(orderData)
 
 // async function asyncFunciton() {}
 const asyncFunction = async () => {
-  await checkProducts(orderData);
-  await checkPrice(orderData);
-  const response = await makeOrder(orderData);
-  const promo = await checkPromotionForOrder(response);
-  console.log('Promocje: ', promo);
+  try {
+    await checkProducts(orderData);
+    await checkPrice(orderData);
+    const response = await makeOrder(orderData);
+    const promo = await checkPromotionForOrder(response);
+    console.log('Promocje: ', promo);
+  } catch (error) {
+    alert(error.message);
+  }
 }
 asyncFunction();
