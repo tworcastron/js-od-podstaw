@@ -84,9 +84,10 @@ const makeOrder = (data) => {
 const checkPromotionForOrder = (response) => {
   const { orderId } = response;
   console.log('Order ID', orderId);
-  return new Promise(res => {
+  return new Promise((res, rej) => {
     setTimeout(() => {
-      res(['kurs HTML za 50%!'])
+      // res(['kurs HTML za 50%!'])
+      rej('Błąd serwera')
     }, 2000);
   });
 }
@@ -104,4 +105,7 @@ checkProducts(orderData)
   .then(checkPromotionForOrder)
   .then(response => {
     console.log('Promocje: ', response);
+  })
+  .catch(error => {
+    alert(error);
   })
