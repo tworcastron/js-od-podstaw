@@ -86,13 +86,15 @@ const checkPromotionForOrder = (response) => {
   console.log('Order ID', orderId);
   return new Promise((res, rej) => {
     setTimeout(() => {
-      // res(['kurs HTML za 50%!'])
-      rej('Błąd serwera')
+      res(['kurs HTML za 50%!'])
+      // rej('Błąd serwera')
     }, 2000);
   });
 }
 
 const orderData = {}; // dane zamównienia
+/*
+// promise pattern
 checkProducts(orderData)
   .then(response => {
     console.log('Czy produkty dostępne:', response.status);
@@ -109,3 +111,16 @@ checkProducts(orderData)
   .catch(error => {
     alert(error);
   })
+*/
+
+// async/await
+
+// async function asyncFunciton() {}
+const asyncFunction = async () => {
+  await checkProducts(orderData);
+  await checkPrice(orderData);
+  const response = await makeOrder(orderData);
+  const promo = await checkPromotionForOrder(response);
+  console.log('Promocje: ', promo);
+}
+asyncFunction();
