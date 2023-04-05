@@ -1,0 +1,7 @@
+Zadanie 1: Przygotuj funkcje, która podświetli na moment kliknięty button
+
+Zadadnie 2: Przygotuj stoper z dokładnością do 1/100 sekundy.
+  - startuje po klinięciu w "Start"
+  - po starcie button "Start" zamienia się w "Stop"
+  - stopuje po kliknięciu w "Stop"
+  - po zastopowaniu button "Stop" zamienia się w "Start" i wznawia obecny stoper od ostatniego stanu
