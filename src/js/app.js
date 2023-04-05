@@ -3,6 +3,8 @@
 // złożenie zamówienia
 // pobranie promocji (w podziękowaniu) do zamówienia
 
+/*
+// callback style
 const checkProducts = (data, callback) => {
   // wysłanie requestu na backend
   setTimeout(() => {
@@ -46,3 +48,60 @@ checkProducts(orderData, (response) => {
     });
   });
 });
+*/
+// callback
+const checkProductsCallback = (data, callback) => {
+  // wysłanie requestu na backend
+  setTimeout(() => {
+    callback({ status: 'ok' });
+  }, 2000);
+}
+checkProductsCallback({}, response => {
+  console.log(response.status);
+})
+// promise
+const checkProducts = (data) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ status: 'ok' });
+    }, 2000);
+  })
+}
+const checkPrice = (data) => {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      res({ status: 'ok', data })
+    }, 2000);
+  });
+}
+const makeOrder = (data) => {
+  return new Promise((res) => {
+    setTimeout(() => {
+      res({ orderId: 123, data })
+    }, 2000);
+  });
+}
+const checkPromotionForOrder = (response) => {
+  const { orderId } = response;
+  console.log('Order ID', orderId);
+  return new Promise(res => {
+    setTimeout(() => {
+      res(['kurs HTML za 50%!'])
+    }, 2000);
+  });
+}
+
+const orderData = {}; // dane zamównienia
+checkProducts(orderData)
+  .then(response => {
+    console.log('Czy produkty dostępne:', response.status);
+    return checkPrice(orderData);
+  })
+  .then(response => {
+    console.log('Cena poprawna:', response.status);
+    return makeOrder(orderData);
+  })
+  .then(checkPromotionForOrder)
+  .then(response => {
+    console.log('Promocje: ', response);
+  })
