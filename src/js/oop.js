@@ -27,11 +27,26 @@ class Product {
     this.title = title;
   }
 }
+class PromotionProduct extends Product {
+  constructor(title, price) {
+    super(title, price);
+    // this.title = "Kurs na promocji: " + title;
+  }
+
+  getPromotionPrice() {
+    return this.price - 10;
+  }
+  getTitle() {
+    return "Kurs na promocji: " + this.title;
+  }
+}
 
 // obiekt
 const p1 = new Product('JS od podstaw', 100);
-const p2 = new Product('PHP od podstaw', 80);
+const p2 = new PromotionProduct('PHP od podstaw', 80);
 
-p1.setTitle('JS dla zaawansowanych');
-console.log(p1.getTitle());
+// p1.setTitle('JS dla zaawansowanych');
+// console.log(p1.getTitle());
+console.log(p2.getPromotionPrice());
+console.log(p2.getTitle());
 console.log(p2);
