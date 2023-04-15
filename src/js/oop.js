@@ -6,13 +6,27 @@ const product = {
 
 // OOP:
 // kształt/struktura/klasa
-function Product(title, price) {
-  this.name = title;
-  this.price = price;
+// function Product(title, price) {
+//   this.name = title;
+//   this.price = price;
+// }
+// // obiekty dziedziczą wartości z prototypu
+// Product.prototype.getTitle = function() { return this.name; }
+// Product.prototype.setTitle = function(title) { this.name = title; }
+
+class Product {
+  constructor(title, price) {
+    this.title = title;
+    this.price = price; 
+  }
+
+  getTitle() {
+    return this.title;
+  }
+  setTitle(title) {
+    this.title = title;
+  }
 }
-// obiekty dziedziczą wartości z prototypu
-Product.prototype.getTitle = function() { return this.name; }
-Product.prototype.setTitle = function(title) { this.name = title; }
 
 // obiekt
 const p1 = new Product('JS od podstaw', 100);
