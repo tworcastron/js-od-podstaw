@@ -47,6 +47,9 @@ const p2 = new PromotionProduct('PHP od podstaw', 80);
 
 // p1.setTitle('JS dla zaawansowanych');
 // console.log(p1.getTitle());
-console.log(p2.getPromotionPrice());
-console.log(p2.getTitle());
-console.log(p2);
+// console.log(p2.getPromotionPrice());
+// console.log(p2.getTitle());
+
+// pobrać prototyp
+// console.log(Object.getPrototypeOf('text'));
+// console.log(p2.__proto__);
