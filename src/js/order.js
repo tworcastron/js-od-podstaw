@@ -1,3 +1,5 @@
+import { createOrder } from './helpers/database.js';
+
 const validateName = (value) => {
   if (!value) return 'Imię i nazwisko jest wymagane';
   if (value.length < 3) return 'Imię i nazwisko jest za krótkie';
@@ -54,6 +56,11 @@ const onSubmit = (e) => {
   if (!hasErrors) {
     // wysłać dane na server
     document.querySelector('#loading').style.display = 'flex';
+
+    createOrder({
+      ...values,
+      items: JSON.parse(localStorage.getItem('items')),
+    });
 
     // usuń dane z koszyka
     localStorage.removeItem('items');
