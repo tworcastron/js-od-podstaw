@@ -55,6 +55,9 @@ const onSubmit = (e) => {
     // wysłać dane na server
     document.querySelector('#loading').style.display = 'flex';
 
+    // usuń dane z koszyka
+    localStorage.removeItem('items');
+
     setTimeout(() => {
       // przekierowanie
       window.location.href = '/podziekowanie.html';
