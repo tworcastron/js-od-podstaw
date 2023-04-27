@@ -1,4 +1,4 @@
-import { createOrder } from './helpers/database.js';
+// import { createOrder } from './helpers/database.js';
 
 const validateName = (value) => {
   if (!value) return 'Imię i nazwisko jest wymagane';
@@ -57,10 +57,10 @@ const onSubmit = (e) => {
     // wysłać dane na server
     document.querySelector('#loading').style.display = 'flex';
 
-    createOrder({
-      ...values,
-      items: JSON.parse(localStorage.getItem('items')),
-    });
+    // createOrder({
+    //   ...values,
+    //   items: JSON.parse(localStorage.getItem('items')),
+    // });
 
     // usuń dane z koszyka
     localStorage.removeItem('items');
